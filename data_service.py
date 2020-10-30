@@ -25,7 +25,26 @@ def get_Goods():
 
     return Goods_list
 
-Goods = get_Goods()
 
-for c in Goods:
-    print(c)
+
+def show_Goods(Goods):
+    """Виводить на екран список речей 
+
+    Args:
+        Goods (list): список речей
+    """
+    Goods_code_from = input("З я кого коду?")
+    Goods_code_to = input("По який код?")
+
+    count_lines = 0
+
+    for Good in (Goods):
+        if Goods_code_from < Good[0] < Goods_code_to:
+            print("Код: {:8} Найменування: {:20} Торгова знижка: {:5}".format(Good[0], Good[1], Good[2]))
+            count_lines +=1
+
+    if count_lines == 0:
+        print("По вашому запиту нічого не знайдено")
+
+Goods = get_Goods()
+show_Goods(Goods)
