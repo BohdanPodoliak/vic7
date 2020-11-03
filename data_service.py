@@ -7,14 +7,9 @@ def get_Goods():
     Returns:
       Goods_list  : список товарів
     """
-    
-    from_file = [
-     "1000;Тканини;4",
-     "2000;Одяг та білизна;7,5",
-     "3000;Взуття;7,5",
-     "4000;Трикотаж;7,5",
-     "5000;Галантерея;9,5"
-    ]
+    with open ("C:\Users\Formula\Documents\ICS-37630\Data\Goods.txt") as Goods_file:
+        from_file = Goods_file.readlines()
+
 
     Goods_list = []
 
@@ -39,7 +34,7 @@ def show_Goods(Goods):
     count_lines = 0
 
     for Good in (Goods):
-        if Goods_code_from < Good[0] < Goods_code_to:
+        if Goods_code_from <= Good[0] <= Goods_code_to:
             print("Код: {:8} Найменування: {:20} Торгова знижка: {:5}".format(Good[0], Good[1], Good[2]))
             count_lines +=1
 
