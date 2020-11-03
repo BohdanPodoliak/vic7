@@ -7,9 +7,8 @@ def get_Goods():
     Returns:
       Goods_list  : список товарів
     """
-    
     with open ("./Data/Goods.txt") as Goods_file:
-            from_file = Goods_file.readlines()
+        from_file = Goods_file.readlines()
 
 
     Goods_list = []
