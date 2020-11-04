@@ -7,7 +7,7 @@ def get_Goods():
     Returns:
       Goods_list  : список товарів
     """
-    with open ("./Data/Goods.txt") as Goods_file:
+    with open ("C:\Users\Formula\Documents\ICS-37630\Data\Goods.txt") as Goods_file:
         from_file = Goods_file.readlines()
 
 
