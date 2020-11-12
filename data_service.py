@@ -37,6 +37,7 @@ def show_Goods(Goods):
         if Goods_code_from <= Good[0] <= Goods_code_to:
             print("Код: {:8} Найменування: {:20} Торгова знижка: {:5}".format(Good[0], Good[1], Good[2]))
             count_lines +=1
+            Good[1] = int(str)
 
     if count_lines == 0:
         print("По вашому запиту нічого не знайдено")
