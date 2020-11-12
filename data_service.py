@@ -49,45 +49,46 @@ show_Goods(Goods)
 
 
 
-def get_Circulations(Circulations):
+
+def get_Commodity_circulation():
     """повертає список речей 
 
     Returns:
-      Circulations_list  : список інформації
+      Commodity_circulation_list  : список інформації
     """
-    with open ("./Data/Commodity circulation.txt") as Circulations_file:
-        from_file = Circulations_file.readlines()
+    with open ("./Data/Commodity circulation.txt") as Commodity_circulation_file:
+        from_file = Commodity_circulation_file.readlines()
 
 
-    Circulation_list = []
+    Commodity_circulation_list = []
 
     for line in from_file:
         line_list = line.split(';')
-        Circulations_list.append(line_list)
+        Commodity_circulation_list.append(line_list)
 
 
-    return Circulations_list
+    return Commodity_circulation_list
 
 
 
-def show_Circulations(Circulations):
+def show_Commodity_circulation(Commodity_circulation):
     """Виводить на екран список інформації 
 
     Args:
-        Circulations (list): список інформації
+        Commodity_circulation(list): список інформації
     """
-    Circulations_code_from = input("З я кого коду?")
-    Circulations_code_to = input("По який код?")
+    Commodity_circulation_code_from = input("З я кого коду?")
+    Commodity_circulation_code_to = input("По який код?")
 
     count_lines = 0
 
-    for Circulation in (Circulations):
-        if Circulations_code_from <= Circulation[0] <= Circulations_code_to:
-            print("Код: {:8} План: {:5} Очікуєме виконання: {:5} Рік: {:5}".format(Circulation[0], Circulation[1], Circulation[2], Circulation[3]))
+    for Circulation in (Commodity_circulation):
+        if Commodity_circulation_code_from <= Circulation[0] <= Commodity_circulation_code_to:
+            print("Код: {:5} План: {:5} Очікуєме виконання: {:5} Рік: {:5}" .format(Circulation[0], Circulation[1], Circulation[2], Circulation[3]))
             count_lines +=1
 
     if count_lines == 0:
         print("По вашому запиту нічого не знайдено")
 
-Circulations = get_Circulations ()
-show_Circulations (Circulations)
+Commodity_circulation = get_Commodity_circulation ()
+show_Commodity_circulation (Commodity_circulation)
