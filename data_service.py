@@ -84,7 +84,7 @@ def show_Commodity_circulation(Commodity_circulation):
 
     for Circulation in (Commodity_circulation):
         if Commodity_circulation_code_from <= Circulation[0] <= Commodity_circulation_code_to:
-            print("Код: {:5} План: {:5} Очікуєме виконання: {:5} Рік: {:5}" .format(Circulation[0], Circulation[1], Circulation[2], Circulation[3]))
+            print("Код: {:10} План: {:10} Очікуєме виконання: {:10} Рік: {:10}" .format(Circulation[0], Circulation[1], Circulation[2], Circulation[3]))
             count_lines +=1
 
     if count_lines == 0:
