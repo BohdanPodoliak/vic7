@@ -57,7 +57,7 @@ def get_Commodity_circulation():
     Returns:
       Commodity_circulation_list  : список інформації
     """
-    with open ("./Data/Commodity circulation.txt") as Commodity_circulation_file:
+    with open (".\Data\Commodity circulation.txt") as Commodity_circulation_file:
         from_file = Commodity_circulation_file.readlines()
 
 
