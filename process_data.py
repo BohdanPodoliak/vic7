@@ -33,6 +33,21 @@ def create_Income_list():
         
         return 'назва не знайдена'
     
+    def get_sale_name(sale_code):
+        """повертає скидку по коді
+
+        Args:
+            sale_code ([type]): код товарної скидки
+            """
+
+        for Good in Goods:
+            if sale_code == Good[0]:
+                return Good[2]    
+
+        return 'назва не знайдена'        
+      
+
+
     Income_list = []
     
     Goods = get_Goods()
@@ -49,10 +64,8 @@ def create_Income_list():
         Income_work['plan_circulaton']               = Commodity[1]
         Income_work['expected_perf_circulation']     = Commodity[2]
         Income_work['tovarna_group_name']            = get_tovarna_group_name(Commodity[0])
+        Income_work['sale']                          = get_sale_name(Commodity[0])
         
         # накопичити сформований рядок
         Income_list.append(Income_work)
-
-           
-    return Income_list    
-
+        
