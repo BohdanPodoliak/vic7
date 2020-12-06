@@ -6,7 +6,7 @@ from data_service import get_Goods, get_Commodity_circulation
 # структура рядка розрахункової таблиці
 Income = {
     
-    'tovarna_group_name'        : '',    # назва устаткування
+    'Nazva'                     : '',    # назва устаткування
     'year'                      : 0,     # назва клієнта
     'plan_circulation'          : 0.0,   # номер заказа
     'expected_perf_circulation' : 0,     # кількість
@@ -19,16 +19,16 @@ def create_Income_list():
     """form a list
     """
     
-    def get_tovarna_group_name(tovarna_group_code):
+    def get_Nazva_name(Nazva_code):
         """повертає назву групи по його коді
 
 
         Args:
-            tovarna_group_code ([type]): код код товарної групи
+            Nazva_code ([type]): код код товарної групи
         """
         
         for Good in Goods:
-            if tovarna_group_code == Good[0]:
+            if Nazva_code == Good[0]:
                 return Good[1]
         
         return 'назва не знайдена'
@@ -60,13 +60,13 @@ def create_Income_list():
         Income_work = Income.copy()
         
         # заповнити робочий словник значеннями 
+        Income_work['Nazva']                         = get_Nazva_name(Commodity[0])
         Income_work['year']                          = Commodity[3]
         Income_work['plan_circulation']              = Commodity[1]
         Income_work['expected_perf_circulation']     = Commodity[2]
-        Income_work['tovarna_group_name']            = get_tovarna_group_name(Commodity[0])
         Income_work['discount']                      = get_discount_name(Commodity[0])
-        Income_work['plan_income']                   = Income_work['plan_circulation'] * Income_work['discount']
-        Income_work['expected_perf_income']          = Income_work['expected_perf_circulation'] * Income_work['discount']
-
+        
         # накопичити сформований рядок
         Income_list.append(Income_work)
+
+create_Income_list()
