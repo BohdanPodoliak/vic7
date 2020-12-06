@@ -46,11 +46,6 @@ Goods = get_Goods()
 show_Goods(Goods)
 
 
-
-
-
-
-
 def get_Commodity_circulation():
     """повертає список речей 
 
@@ -91,5 +86,5 @@ def show_Commodity_circulation(Commodity_circulation):
     if count_lines == 0:
         print("По вашому запиту нічого не знайдено")
 
-Commodity_circulation = get_Commodity_circulation ()
+Commodity_circulation = get_Commodity_circulation()
 show_Commodity_circulation (Commodity_circulation)
