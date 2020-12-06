@@ -63,7 +63,7 @@ def write_Income(Income_list):
         Income_list ([type]): список прибутку
     """
 
-    with open('./C:/Users/Formula/Documents/ICS-37630/Data/Income.txt', "w") as Income_file:
+    with open('./Data/Income.txt', "w") as Income_file:
         for Income in Income_list:
             line = \
                 Income['Nazva'] + ';' +                           \
@@ -93,7 +93,7 @@ while True:
 
     elif command_number == '1':
         Income_list = create_Income()
-        show_Income(Income_list())
+        show_Income(create_Income())
         input(STOP_MASSAGE)
 
     elif command_number == '2':
