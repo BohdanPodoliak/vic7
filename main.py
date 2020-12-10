@@ -3,7 +3,7 @@
 - виводити на екран файли первинних данних
 """
 
-from process_data import create_total_income
+from process_data import create_Income
 from data_service import show_Commodity_circulation, show_Goods, get_Commodity_circulation, get_Goods
 import os
 
