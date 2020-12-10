@@ -3,7 +3,7 @@
 - виводити на екран файли первинних данних
 """
 
-from process_data import create_Income
+from process_data import create_total_income
 from data_service import show_Commodity_circulation, show_Goods, get_Commodity_circulation, get_Goods
 import os
 
@@ -67,7 +67,7 @@ def write_Income(Income_list):
         for Income in Income_list:
             line = \
                 Income['Nazva'] + ';' +                           \
-                str(Income['year']) + ';' +                        \
+                str(Income['year']) + ';' +                       \
                 str(Income['plan_circulation']) + ';' +           \
                 str(Income['expected_perf_circulation']) + ';' +  \
                 str(Income['discount']) + ';' +                   \

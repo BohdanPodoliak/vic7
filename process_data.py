@@ -58,15 +58,22 @@ def create_Income_list():
         
         # зробити робочий словник з шаблону
         Income_work = Income.copy()
-        
-        # заповнити робочий словник значеннями 
-        Income_work['Nazva']                         = get_Nazva_name(Commodity[0])
-        Income_work['year']                          = Commodity[3]
-        Income_work['plan_circulation']              = Commodity[1]
-        Income_work['expected_perf_circulation']     = Commodity[2]
-        Income_work['discount']                      = get_discount_name(Commodity[0])
-        
-        # накопичити сформований рядок
+
+        x = int(Income_work['plan_circulation'])
+        y = int(Income_work['discount'])
+        z = int(Income_work['expected_perf_circulation'])
+
+        Income_work['Nazva']                     = get_Nazva_name(Commodity[0])
+        Income_work['year']                      = Commodity[3]
+        Income_work['plan_circulation']          = Commodity[1]
+        Income_work['expected_perf_circulation'] = Commodity[2]
+        Income_work['discount']                  = get_discount_name(Commodity[0])
+        Income_work['plan_income']               = x * y
+        Income_work['expected_perf_income']      = z * y
+
         Income_list.append(Income_work)
+
+    for item in Income_list:
+        print(item)
 
 create_Income_list()
