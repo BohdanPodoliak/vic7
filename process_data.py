@@ -72,8 +72,3 @@ def create_Income_list():
         Income_work['expected_perf_income']      = z * y
 
         Income_list.append(Income_work)
-
-    for item in Income_list:
-        print(item)
-
-create_Income_list()
