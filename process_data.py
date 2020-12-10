@@ -73,7 +73,3 @@ def create_Income_list():
 
         Income_list.append(Income_work)
 
-    for item in Income_list:
-        print(item)
-
-create_Income_list()
