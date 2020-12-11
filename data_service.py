@@ -7,8 +7,9 @@ def get_Goods():
     Returns:
       Goods_list  : список товарів
     """
-    with open ("./Data/Goods.txt") as Goods_file:
+    with open ("./Data/Goods.txt", encoding='utf-8') as Goods_file:
         from_file = Goods_file.readlines()
+        from_file = [line.rstrip() for line in from_file]
 
 
     Goods_list = []
@@ -43,7 +44,7 @@ def show_Goods(Goods):
         print("По вашому запиту нічого не знайдено")
 
 Goods = get_Goods()
-show_Goods(Goods)
+
 
 
 def get_Commodity_circulation():
@@ -87,4 +88,3 @@ def show_Commodity_circulation(Commodity_circulation):
         print("По вашому запиту нічого не знайдено")
 
 Commodity_circulation = get_Commodity_circulation()
-show_Commodity_circulation (Commodity_circulation)

@@ -9,7 +9,7 @@ Income = {
     'Nazva'                     : '',    # назва устаткування
     'year'                      : 0,     # назва клієнта
     'plan_circulation'          : 0.0,   # номер заказа
-    'expected_perf_circulation' : 0,     # кількість
+    'expected_perf_circulation' : 0.0,   # кількість
     'discount'                  : 0.0,   # ціна
     'plan_income'               : 0.0,   # сума
     'expected_perf_income'      : 0.0    # Очікуване вик. (Валовий дохід) 
@@ -41,7 +41,7 @@ def create_Income_list():
             """
 
         for Good in Goods:
-            if discount_code == Good[0]:
+            if float(discount_code) == float(Good[0]):
                 return Good[2]    
 
         return 'назва не знайдена'        
@@ -59,17 +59,17 @@ def create_Income_list():
         # зробити робочий словник з шаблону
         Income_work = Income.copy()
 
-        x = int(Income_work['plan_circulation'])
-        y = int(Income_work['discount'])
-        z = int(Income_work['expected_perf_circulation'])
-
+        
         Income_work['Nazva']                     = get_Nazva_name(Commodity[0])
         Income_work['year']                      = Commodity[3]
         Income_work['plan_circulation']          = Commodity[1]
         Income_work['expected_perf_circulation'] = Commodity[2]
         Income_work['discount']                  = get_discount_name(Commodity[0])
-        Income_work['plan_income']               = x * y
-        Income_work['expected_perf_income']      = z * y
+        Income_work['plan_income']               = float(Income_work['plan_circulation']) * float(Income_work['discount'])
+        Income_work['expected_perf_income']      = float(Income_work['expected_perf_circulation']) * float( Income_work['discount'])
 
         Income_list.append(Income_work)
+    
+    return Income_list
 
+print(create_Income_list())
